@@ -1,0 +1,49 @@
+<?php
+  /**
+   * Implements hook_schema()
+   */
+
+  function example_user_register_schema() {
+    $schema = array();
+    $schema["example_user_register"] = [
+      'description' => "Example user register",
+      'fields' => [
+        'uid' => [
+          'type' => 'serial',
+          'size' => 'tiny',
+          'unsigned' => TRUE,
+          'not null' => TRUE,
+        ],
+        'name' => [
+          'type' => 'varchar',
+          'length' => 100,
+          'not null' => TRUE,
+        ],
+        'phone' => [
+          'type' => 'varchar',
+          'length' => 15,
+          'no null' => TRUE,
+        ],
+        'email' => [
+          'type' => 'varchar',
+          'length' => 100,
+          'not null' => FALSE,
+        ],
+        'age' => [
+          'type' => 'varchar',
+          'length' => 20,
+          'not null' => TRUE,
+        ],
+        'describe'=> [
+          'description' => 'user description',
+          'type' =>  'text',
+          'size' => 'normal',
+          'not null'  => FALSE,
+        ],
+      ],
+      'primary key' => ['uid'],
+      'collation' => 'utf8_general_ci',
+    ];
+    return $schema;
+  }
+?>

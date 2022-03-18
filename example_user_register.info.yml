@@ -1,0 +1,4 @@
+name: Example User Register Module
+type: module
+core_version_requirement: ^9.1
+description: 'Example User Register Module'
